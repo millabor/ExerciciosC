@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+  float m1[2][2];
+  float media, quant;
+
+  printf("\nDigite a primeira nota: ");
+  scanf("%f", &m1[0][0]);
+  printf("Digite a segunda nota: ");
+  scanf("%f", &m1[0][1]);
+  printf("Digite a terceira nota: ");
+  scanf("%f", & m1[1][0]);
+  printf("Digite a terceira nota: ");
+  scanf("%f", & m1[1][1]);
+
+  quant = m1[0][0] + m1[0][1] + m1[1][0] + m1[1][1];
+  media = quant/4;
+
+  printf("\nA média é %.2f", media);
+  
+}
