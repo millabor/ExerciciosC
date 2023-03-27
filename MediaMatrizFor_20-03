@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+  float matriz[4][2];
+  float media, quantidade;
+  int cont1, cont2; 
+  quantidade = 0;
+
+  for(cont1 = 0; cont1 <= 4; cont1++){
+    for(cont2 = 0; cont2<=2; cont2++){
+      printf("Digite a posição %d e %d da matriz: ", cont1, cont2);
+      scanf("%f", &matriz[cont1][cont2]);
+      quantidade = quantidade + matriz[cont1][cont2];
+    }
+  }
+  
+  media = quantidade/8;
+
+  printf("\nA média de 8 numeros e igual a %.2f", media);
+  
+}
