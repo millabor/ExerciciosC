@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+  float matriz[2][2];
+  float media, quant;
+  
+  matriz[0][0] = 6;
+  matriz[0][1] = 8;
+  matriz[1][0] = 4;
+  matriz[1][1] = 10;
+
+  quant = matriz[0][0] + matriz[0][1] + matriz[1][0] + matriz[1][1];
+  media = quant/4;
+
+  printf("A media e %.2f", media);
+
+  
+}
