@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main(void) {
+
+  float matriz[10][2]; // 10 pessoas, duas notas por pessoa
+  float medialinha, p, mediaturma =0; // media de um aluno especifico e media de todos os alunos (p)
+  int contlinha, contcoluna;
+  char nome[10][140];
+
+  // entrada das notas, 2 por linha.
+  // entrada do nome
+
+  for (contlinha = 0; contlinha < 10; contlinha++) {
+    for (contcoluna = 0; contcoluna < 2; contcoluna++) {
+      if (contcoluna == 0) {
+        printf("\nDigite o nome do aluno: ");
+        scanf("%s", nome[contlinha]);
+      }
+      printf("\nDigite o valor da nota que está na posição [%d][%d]: ", contlinha, contcoluna);
+      scanf("%f", &matriz[contlinha][contcoluna]);
+    }
+  }
+
+  // soma das duas notas de cada linha, use so o contlinha
+
+  for (contlinha = 0; contlinha < 10; contlinha++) {
+    medialinha = (matriz[contlinha][0] + matriz[contlinha][1]) / 2;
+    mediaturma += medialinha / 10;
+    p = mediaturma * 1.5;
+
+    if (medialinha >= 7) {
+      printf("\nO aluno %d, chamado(a) %s, foi aprovado. Média = %.2f",
+             contlinha + 1, nome[contlinha], medialinha);
+    } else if (matriz[contlinha][1] == 10) {
+      printf("\nO aluno %d, chamado(a) %s, foi aprovado, visto que sua segunda "
+             "nota foi 10",
+             contlinha + 1, nome[contlinha]);
+      printf(". Média = %.2f", medialinha);
+    } else if (medialinha >= p || medialinha >= 5) {
+      printf("\nO aluno %d, chamado(a) %s, irá pro exame. Média = %.2f",
+             contlinha + 1, nome[contlinha], medialinha);
+    } else {
+      printf("\nO aluno %d, chamado(a) %s, está reprovado. Média = %.2f",
+             contlinha + 1, nome[contlinha], medialinha);
+    }
+  }
+
+  printf("\n\nMédia dos alunos = %.2f", mediaturma);
+  printf("\nValor de p: %f", p);
+  return 0;
+}
